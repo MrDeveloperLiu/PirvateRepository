@@ -39,8 +39,8 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "git@github.com:MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "CollectionUI/Classes", "CollectionUI/Classes/**/*.{h,m}", "CollectionUI/Classes/**/*.swift"
-  spec.exclude_files = "CollectionUI/Classes/Exclude"
+  spec.source_files  = "Classes", "Classes/**/*.{h,m}", "Classes/**/*.swift"
+  spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "CollectionUI/Classes/**/*.h"
 
