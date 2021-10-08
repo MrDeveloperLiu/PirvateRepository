@@ -41,9 +41,9 @@ Pod::Spec.new do |spec|
   # spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
   spec.source       = { :git => "git@github.com:MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "CollectionUI/Classes/**/*.swift"
-  spec.exclude_files = "CollectionUI/Classes/Exclude"
-  # spec.public_header_files = "CollectionUI/Classes/**/*.swift"
+  spec.source_files  = "Classes/**/*.swift"
+  spec.exclude_files = "Classes/Exclude"
+  # spec.public_header_files = "Classes/**/*.swift"
 
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"
