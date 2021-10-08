@@ -18,11 +18,11 @@ Pod::Spec.new do |spec|
      And there may take more easy
                    DESC
 
-  spec.homepage     = "https://github.com/MrDeveloperLiu/PirvateRepository"
+  spec.homepage     = "https://github.com/MrDeveloperLiu/PirvateRepository.git"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
-  spec.license      = "MIT"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = "MIT"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
   spec.author             = { "刘杨" => "164182408@qq.com" }
   # Or just: spec.author    = "刘杨"
@@ -30,6 +30,7 @@ Pod::Spec.new do |spec|
   # spec.social_media_url   = "https://twitter.com/刘杨"
 
   spec.platform     = :ios, "10.0"
+  spec.swift_versions = ['5.0']
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -37,12 +38,12 @@ Pod::Spec.new do |spec|
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
 
-  spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
+  # spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "git@github.com:MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}", "Classes/**/*.swift"
-  spec.exclude_files = "Classes/Exclude"
-
-  # spec.public_header_files = "CollectionUI/Classes/**/*.h"
+  spec.source_files  = "CollectionUI/Classes/**/*.swift"
+  spec.exclude_files = "CollectionUI/Classes/Exclude"
+  # spec.public_header_files = "CollectionUI/Classes/**/*.swift"
 
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"
