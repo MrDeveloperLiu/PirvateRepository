@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CollectionUI"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "CollectionUI: That is some useful wedigt for UITableView and UICollectionView"
   spec.description  = <<-DESC
     Hello There~
@@ -18,17 +18,9 @@ Pod::Spec.new do |spec|
      And there may take more easy
                    DESC
 
-  spec.homepage     = "https://github.com/MrDeveloperLiu/PirvateRepository.git"
-  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-  # spec.license      = "MIT"
+  spec.homepage     = "https://github.com/MrDeveloperLiu/PirvateRepository"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
-
   spec.author             = { "刘杨" => "164182408@qq.com" }
-  # Or just: spec.author    = "刘杨"
-  # spec.authors            = { "刘杨" => "164182408@qq.com" }
-  # spec.social_media_url   = "https://twitter.com/刘杨"
-
   spec.platform     = :ios, "10.0"
   spec.swift_versions = ['5.0']
 
@@ -38,27 +30,9 @@ Pod::Spec.new do |spec|
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
 
-  # spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
-  spec.source       = { :git => "git@github.com:MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
-
+  spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
   spec.source_files  = "Classes/**/*.swift"
   spec.exclude_files = "Classes/Exclude"
-  # spec.public_header_files = "Classes/**/*.swift"
 
-  # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
-
-  # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
-
-  # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
-
-  # spec.library   = "iconv"
-  # spec.libraries = "iconv", "xml2"
-
-  # spec.requires_arc = true
-
-  # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
-
+  
 end
