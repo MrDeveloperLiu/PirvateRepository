@@ -31,8 +31,8 @@ Pod::Spec.new do |spec|
   # spec.tvos.deployment_target = "9.0"
 
   spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "#{spec.version}" }
-  spec.source_files  = "Classes/**/*.swift"
-  spec.exclude_files = "Classes/Exclude"
+  spec.source_files  = "CollectionUI/Classes/**/*.swift"
+  spec.exclude_files = "CollectionUI/Classes/Exclude"
 
   
 end
