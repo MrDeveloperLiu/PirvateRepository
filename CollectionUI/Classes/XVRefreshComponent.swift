@@ -17,12 +17,12 @@ struct XVRefreshOption: OptionSet {
 }
 
 public class XVRefreshComponent {
-    enum Event {
+    public enum Event {
         case refresh
         case load
     }
     
-    enum Result {
+    public enum Result {
         case success(items: Int)
         case failed
     }
@@ -38,8 +38,8 @@ public class XVRefreshComponent {
         var needReloaded: Bool
     }
     
-    typealias Completion = (String, Result, Error?) -> Void
-    typealias Entry = (String, Event, @escaping Completion) -> Void
+    public typealias Completion = (String, Result, Error?) -> Void
+    public typealias Entry = (String, Event, @escaping Completion) -> Void
     
     private weak var _scrollView: UIScrollView?
     private var _status: Status

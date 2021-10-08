@@ -7,14 +7,14 @@
 
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
 
-    enum Kind: Int {
+    public enum Kind: Int {
         case header = 0
         case footer = 1
     }
     
-    var builder: XVCollectionViewBuilder {
+    public var builder: XVCollectionViewBuilder {
         set {
             objc_setAssociatedObject(self, &XVPublicAssoiatedKey.collectionBuilder, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -28,11 +28,11 @@ extension UICollectionView {
         }
     }
     
-    func registerCellClass<Cell: UICollectionViewCell>(_ type: Cell.Type) where Cell: XVSectionItemViews {
+    public func registerCellClass<Cell: UICollectionViewCell>(_ type: Cell.Type) where Cell: XVSectionItemViews {
         self.register(Cell.classForCoder(), forCellWithReuseIdentifier: Cell.reuseId)
     }
     
-    func registerHeaderFooterClass<View: UICollectionReusableView>(_ type: View.Type, kind: Kind) where View: XVSectionItemViews {
+    public func registerHeaderFooterClass<View: UICollectionReusableView>(_ type: View.Type, kind: Kind) where View: XVSectionItemViews {
         switch kind {
         case .header:
             self.register(View.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: View.reuseId)

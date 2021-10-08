@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    var builder: XVTableViewBuilder {
+    public var builder: XVTableViewBuilder {
         set {
             objc_setAssociatedObject(self, &XVPublicAssoiatedKey.tableBuilder, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -24,11 +24,11 @@ extension UITableView {
         }
     }
     
-    func registerCellClass<Cell: UITableViewCell>(_ type: Cell.Type) where Cell: XVSectionItemViews {
+    public func registerCellClass<Cell: UITableViewCell>(_ type: Cell.Type) where Cell: XVSectionItemViews {
         self.register(Cell.classForCoder(), forCellReuseIdentifier: Cell.reuseId)
     }
     
-    func registerHeaderFooterClass<View: UITableViewHeaderFooterView>(_ type: View.Type) where View: XVSectionItemViews {
+    public func registerHeaderFooterClass<View: UITableViewHeaderFooterView>(_ type: View.Type) where View: XVSectionItemViews {
         self.register(View.classForCoder(), forHeaderFooterViewReuseIdentifier: View.reuseId)
     }
 

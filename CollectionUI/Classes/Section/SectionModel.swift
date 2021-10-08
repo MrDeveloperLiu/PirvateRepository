@@ -7,43 +7,49 @@
 
 import UIKit
 
-struct XVSectionModel<Model> {
-    typealias Item = Model
-    var header: Item?
-    var footer: Item?
-    var rows: [Item] = []
+public struct XVSectionModel<Model> {
+    public typealias Item = Model
+    public var header: Item?
+    public var footer: Item?
+    public var rows: [Item] = []
+    
+    public init(header: Item? = nil, footer: Item? = nil, rows: [Item] = []) {
+        self.header = header
+        self.footer = footer
+        self.rows = rows
+    }
 }
 
-extension XVSectionModel {
+public extension XVSectionModel {
     func index(of item: Item) -> Int? where Item: Equatable {
         return rows.firstIndex { $0 == item}
     }
 }
 
-class XVSectionItemModel {
-    typealias SubscriptionClosure = (_ subscript: Subscript) -> Void
-    typealias BinderClosure = (_ event: Any) -> Void
+public class XVSectionItemModel {
+    public typealias SubscriptionClosure = (_ subscript: Subscript) -> Void
+    public typealias BinderClosure = (_ event: Any) -> Void
 
-    struct State {
-        var selected: Bool
+    public struct State {
+        public var selected: Bool
     }
-    enum Subscript {
+    public enum Subscript {
         case content(content: Any?)
         case reversed(reversed: Any?)
         case state(s: State)
     }
     /// 状态
-    var state: State = State(selected: false) { didSet { publish(.state(s: state)) } }
+    public var state: State = State(selected: false) { didSet { publish(.state(s: state)) } }
     /// 模型对象
-    var content: Any? { didSet { publish(.content(content: content)) } }
+    public var content: Any? { didSet { publish(.content(content: content)) } }
     /// 预留字段
-    var reversed: Any? { didSet { publish(.reversed(reversed: reversed)) } }
+    public var reversed: Any? { didSet { publish(.reversed(reversed: reversed)) } }
     /// 存储型字段
-    var stored: Any?
+    public var stored: Any?
     /// viewClass
-    var viewClass: AnyClass?
+    public var viewClass: AnyClass?
     /// 大小
-    var size: CGSize = .zero
+    public var size: CGSize = .zero
     /// 订阅者(用于更新数据)
     fileprivate var UISubscribler: SubscriptionClosure?
     /// UI代理
@@ -53,12 +59,12 @@ class XVSectionItemModel {
 }
 
 extension XVSectionItemModel: Equatable {
-    static func == (lhs: XVSectionItemModel, rhs: XVSectionItemModel) -> Bool {
+    public static func == (lhs: XVSectionItemModel, rhs: XVSectionItemModel) -> Bool {
         return lhs.id == rhs.id
     }
 }
 
-extension XVSectionItemModel {
+public extension XVSectionItemModel {
     /// row 订阅model的更新
     func subscrible(_ subscription: @escaping SubscriptionClosure) {
         UISubscribler = subscription
@@ -81,8 +87,8 @@ extension XVSectionItemModel {
     }
 }
 
-final class XVTableViewRow: XVSectionItemModel {
-    convenience init(content: Any?, viewClass: AnyClass?, UIBinder: BinderClosure? = nil, size: CGSize = CGSize(width: 0, height: UITableView.automaticDimension)) {
+public final class XVTableViewRow: XVSectionItemModel {
+    public convenience init(content: Any?, viewClass: AnyClass?, UIBinder: BinderClosure? = nil, size: CGSize = CGSize(width: 0, height: UITableView.automaticDimension)) {
         self.init()
         self.content = content
         self.viewClass = viewClass
@@ -91,8 +97,8 @@ final class XVTableViewRow: XVSectionItemModel {
     }
 }
 
-final class XVCollectionViewItem: XVSectionItemModel {
-    convenience init(content: Any?, viewClass: AnyClass?, UIBinder: BinderClosure? = nil, size: CGSize = CGSize(width: 0, height: 0)) {
+public final class XVCollectionViewItem: XVSectionItemModel {
+    public convenience init(content: Any?, viewClass: AnyClass?, UIBinder: BinderClosure? = nil, size: CGSize = CGSize(width: 0, height: 0)) {
         self.init()
         self.content = content
         self.viewClass = viewClass
@@ -101,5 +107,5 @@ final class XVCollectionViewItem: XVSectionItemModel {
     }
 }
 
-typealias XVTableViewSection = XVSectionModel<XVTableViewRow>
-typealias XVCollectionViewSection = XVSectionModel<XVCollectionViewItem>
+public typealias XVTableViewSection = XVSectionModel<XVTableViewRow>
+public typealias XVCollectionViewSection = XVSectionModel<XVCollectionViewItem>

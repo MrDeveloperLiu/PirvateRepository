@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol XVSectionItemViews: AnyObject {
+public protocol XVSectionItemViews: AnyObject {
     
     var model: XVSectionItemModel? {set get}
     
@@ -16,7 +16,7 @@ protocol XVSectionItemViews: AnyObject {
     func onReversed(changed reversed: Any?)
 }
 
-extension XVSectionItemViews {
+public extension XVSectionItemViews {
     var model: XVSectionItemModel? {
         set{
             objc_setAssociatedObject(self, &XVPublicAssoiatedKey.model, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)

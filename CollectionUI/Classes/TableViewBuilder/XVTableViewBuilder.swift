@@ -8,18 +8,18 @@
 import UIKit
 
 
-class XVTableViewBuilder: CollectionBuilder {
-    typealias ItemType = XVTableViewRow
+public class XVTableViewBuilder: CollectionBuilder {
+    public typealias ItemType = XVTableViewRow
         
-    var uiUpdater: UpdaterClosure?
-    var uiSelecter: SelectClosure?
+    public var uiUpdater: UpdaterClosure?
+    public var uiSelecter: SelectClosure?
     
     var datasource: XVTableViewDatasource?
     var delegate: XVTableViewDelegate?
     
     weak var tableView: UITableView?
     
-    var state: CollectionState<ItemType> = CollectionState(sections: [], event: .none) {
+    public var state: CollectionState<ItemType> = CollectionState(sections: [], event: .none) {
         didSet {
             uiUpdater?(state.event)
         }
@@ -39,11 +39,11 @@ class XVTableViewBuilder: CollectionBuilder {
         }
     }
     
-    func sectionWithIndexPath(_ indexPath: IndexPath) -> Int {
+    public func sectionWithIndexPath(_ indexPath: IndexPath) -> Int {
         return indexPath.section
     }
     
-    func rowWithIndexPath(_ indexPath: IndexPath) -> Int {
+    public func rowWithIndexPath(_ indexPath: IndexPath) -> Int {
         return indexPath.row
     }
 

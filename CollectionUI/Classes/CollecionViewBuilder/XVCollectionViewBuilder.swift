@@ -7,19 +7,19 @@
 
 import UIKit
 
-class XVCollectionViewBuilder: CollectionBuilder {
+public class XVCollectionViewBuilder: CollectionBuilder {
     
-    typealias ItemType = XVCollectionViewItem
+    public typealias ItemType = XVCollectionViewItem
         
-    var uiUpdater: UpdaterClosure?
-    var uiSelecter: SelectClosure?
+    public var uiUpdater: UpdaterClosure?
+    public var uiSelecter: SelectClosure?
     
     var datasource: XVCollectionViewDatasource?
     var delegate: XVCollectionViewDelegate?
     
     weak var collectionView: UICollectionView?
     
-    var state: CollectionState<ItemType> = CollectionState(sections: [], event: .none) {
+    public var state: CollectionState<ItemType> = CollectionState(sections: [], event: .none) {
         didSet {
             uiUpdater?(state.event)
         }
@@ -39,11 +39,11 @@ class XVCollectionViewBuilder: CollectionBuilder {
         }
     }
     
-    func sectionWithIndexPath(_ indexPath: IndexPath) -> Int {
+    public func sectionWithIndexPath(_ indexPath: IndexPath) -> Int {
         return indexPath.section
     }
     
-    func rowWithIndexPath(_ indexPath: IndexPath) -> Int {
+    public func rowWithIndexPath(_ indexPath: IndexPath) -> Int {
         return indexPath.item
     }
 }

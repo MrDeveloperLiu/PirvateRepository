@@ -18,7 +18,7 @@ extension UIScrollView {
      scrollView.refresher = XVRefreshComponent(scrollView: scrollView, option: .load)
      */
     
-    var refresher: XVRefreshComponent {
+    public var refresher: XVRefreshComponent {
         set {
             objc_setAssociatedObject(self, &XVPublicAssoiatedKey.refreshView, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -32,11 +32,11 @@ extension UIScrollView {
         }
     }
     
-    func setRefreshRequest(with closure: @escaping XVRefreshComponent.Entry) {
+    public func setRefreshRequest(with closure: @escaping XVRefreshComponent.Entry) {
         refresher.refreshClosure = closure
     }
     
-    func setNomoreDataHandler(with closure: @escaping () -> Void) {
+    public func setNomoreDataHandler(with closure: @escaping () -> Void) {
         refresher.nomoreClosure = closure
     }
 }

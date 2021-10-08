@@ -8,7 +8,7 @@
 import UIKit
 
 
-protocol XVCollectionViewLayoutDelegate {
+public protocol XVCollectionViewLayoutDelegate {
     
     func layout(itemType layout: XVCollectionViewLayout, section: Int) -> [XVCollectionViewLayout.AttributeType]
     
@@ -24,7 +24,7 @@ protocol XVCollectionViewLayoutDelegate {
     func layout(didFinished layout: XVCollectionViewLayout)
 }
 
-extension XVCollectionViewLayoutDelegate {
+public extension XVCollectionViewLayoutDelegate {
     func layout(itemType layout: XVCollectionViewLayout, section: Int) -> [XVCollectionViewLayout.AttributeType] {
         let sectionItem = layout.collectionView!.builder.state.sections[section]
         var types: [XVCollectionViewLayout.AttributeType] = [.cell]
@@ -69,34 +69,34 @@ extension XVCollectionViewLayoutDelegate {
 }
 
 
-class XVCollectionViewLayout: UICollectionViewLayout {
-    typealias Delegate = AnyObject & XVCollectionViewLayoutDelegate
-    enum AttributeType {
+open class XVCollectionViewLayout: UICollectionViewLayout {
+    public typealias Delegate = AnyObject & XVCollectionViewLayoutDelegate
+    public enum AttributeType {
         case cell
         case header
         case footer
     }
-    enum Direction {
+    public enum Direction {
         case horizontal
         case vertical
         case flow
         case flowFreedom
     }
     
-    weak var delegate: Delegate?
+    public weak var delegate: Delegate?
     // 布局方向
-    var direction: Direction = .horizontal
+    public var direction: Direction = .horizontal
     // flow 模式下仅仅left+right生效
-    var itemsInsets: UIEdgeInsets = .zero
+    public var itemsInsets: UIEdgeInsets = .zero
     // flow 模式下垂直距离
-    var itemVerticalMargin: CGFloat = 0
+    public var itemVerticalMargin: CGFloat = 0
     
     private var attributes: [UICollectionViewLayoutAttributes] = []
     private var viewSize: CGSize = .zero
     private var viewSizeMax: CGSize = .zero    
 }
 
-extension XVCollectionViewLayout {
+public extension XVCollectionViewLayout {
     
     override func prepare() {
         super.prepare()

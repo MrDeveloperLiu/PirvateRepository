@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SectionModelEvent {
+public enum SectionModelEvent {
     case none
     
     case refresh
@@ -20,7 +20,7 @@ enum SectionModelEvent {
     case deleteSection(section: Int)
 }
 
-protocol SectionModelState {
+public protocol SectionModelState {
     associatedtype Item
     typealias Sections = XVSectionModel<Item>
     

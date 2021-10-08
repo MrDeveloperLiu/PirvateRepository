@@ -7,14 +7,19 @@
 
 import Foundation
 
-struct CollectionState<ItemType>: SectionModelState {
-    typealias Item = ItemType
+public struct CollectionState<ItemType>: SectionModelState {
+    public typealias Item = ItemType
         
-    var sections: [Sections]
-    var event: SectionModelEvent
+    public var sections: [Sections]
+    public var event: SectionModelEvent
+    
+    public init(sections: [Sections], event: SectionModelEvent) {
+        self.sections = sections
+        self.event = event
+    }
 }
 
-protocol CollectionBuilder {
+public protocol CollectionBuilder {
     associatedtype ItemType
     
     typealias SelectClosure = (Bool, ItemType) -> Void
