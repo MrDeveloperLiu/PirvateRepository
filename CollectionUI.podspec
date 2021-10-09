@@ -30,7 +30,8 @@ Pod::Spec.new do |spec|
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
 
-  spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => spec.version.to_s }
+  # spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => "${spec.version}" }
+  spec.source       = { :git => "git@github.com:MrDeveloperLiu/PirvateRepository.git", :tag => "${spec.version}" }    
   spec.source_files  = "CollectionUI/Classes/**/*"
   spec.exclude_files = "CollectionUI/Classes/Exclude"
   spec.requires_arc = true
