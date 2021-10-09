@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CollectionUI"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "CollectionUI: That is some useful wedigt for UITableView and UICollectionView"
   spec.description  = <<-DESC
     Hello There~
@@ -31,8 +31,8 @@ Pod::Spec.new do |spec|
   # spec.tvos.deployment_target = "9.0"
 
   spec.source       = { :git => "https://github.com/MrDeveloperLiu/PirvateRepository.git", :tag => spec.version.to_s }
-  spec.source_files  = "CollectionUI/Classes/**/*"
-  spec.exclude_files = "CollectionUI/Classes/Exclude"
+  spec.source_files  = "Classes/**/*"
+  spec.exclude_files = "Classes/Exclude"
   spec.requires_arc = true
   
 end
