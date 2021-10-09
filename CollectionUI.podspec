@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CollectionUI"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "CollectionUI: That is some useful wedigt for UITableView and UICollectionView"
   spec.description  = <<-DESC
     Hello There~
