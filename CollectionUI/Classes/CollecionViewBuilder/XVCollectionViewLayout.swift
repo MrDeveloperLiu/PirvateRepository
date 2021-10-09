@@ -100,7 +100,8 @@ public extension XVCollectionViewLayout {
     
     override func prepare() {
         super.prepare()
-
+        preLayout()
+        afterLayout()
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -109,27 +110,7 @@ public extension XVCollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
         return viewSize
-    }
-    //自适应
-    override func shouldInvalidateLayout(forPreferredLayoutAttributes preferredAttributes: UICollectionViewLayoutAttributes, withOriginalAttributes originalAttributes: UICollectionViewLayoutAttributes) -> Bool {
-        originalAttributes.frame = preferredAttributes.frame
-        return true
-    }
-    
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        return true
-    }
-
-    override func invalidateLayout(with context: UICollectionViewLayoutInvalidationContext) {
-//        super.invalidateLayout(with: context)
-    }
-    
-    override func invalidateLayout() {
-        super.invalidateLayout()
-        preLayout()
-        afterLayout()
-    }
-    
+    }    
     
 }
 
