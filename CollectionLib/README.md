@@ -1,2 +1,0 @@
-# PirvateRepository
-Personal repo
