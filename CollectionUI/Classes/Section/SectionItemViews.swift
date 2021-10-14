@@ -33,7 +33,6 @@ public extension XVSectionItemViews {
             switch e {
             case .content(_), .state(_):
                 self?.bind(content: model?.content)
-                self?.bind(content: model?.content)
             case .reversed(let reversed):
                 self?.onReversed(changed: reversed)
             }
